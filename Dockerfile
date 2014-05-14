@@ -14,6 +14,7 @@ RUN \
   su -l postgres -c "pg_ctl -l server.log -w -D /var/lib/pgsql/data start";\
   psql -h 127.0.0.1 -p 5432 -U postgres --command="CREATE USER rhqadmin WITH password 'rhqadmin'";\
   createdb -h 127.0.0.1 -p 5432 -U postgres -O rhqadmin rhq;\
+  echo "host all  all    0.0.0.0/0  md5" >> /var/lib/pgsql/data/pg_hba.conf;\  
   echo "listen_addresses='*'" >> /var/lib/pgsql/data/postgresql.conf;\
   su -l postgres -c "pg_ctl -l server.log -w -D /var/lib/pgsql/data stop"
 
