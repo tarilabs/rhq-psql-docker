@@ -1,4 +1,12 @@
 rhq-psql-docker
 ===============
 
-postgresql docker container for rhq server
+Postgresql Docker container for RHQ Server
+
+
+You can pull the image from Docker hub or build one yourself from Dockerfile
+
+```
+# docker pull vnugent/rhq-psql
+# docker run -dtP vnugent/rhq-psql
+```
